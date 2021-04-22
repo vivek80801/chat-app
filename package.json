@@ -5,8 +5,20 @@
   "main": "server.ts",
   "author": "vivek80801",
   "license": "MIT",
+  "scripts": {
+    "start": "node dist/main.js",
+    "dev": "nodemon ./server.ts",
+    "lint": "eslint \"./**/*.ts\"",
+    "lint:fix": "eslint --fix \"./**/*.ts\"",
+    "format": "prettier --write .",
+    "web": "webpack --config ./webpack.config.js",
+    "web:watch": "webpack --watch --config ./webpack.config.js",
+    "build":"tsc -p ."
+  },
   "devDependencies": {
     "@types/express": "^4.17.11",
+    "@types/express-ejs-layouts": "^2.3.2",
+    "@types/node-sass": "^4.11.1",
     "@types/passport": "^1.0.6",
     "@types/passport-local": "^1.0.33",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
@@ -14,13 +26,16 @@
     "eslint": "^7.24.0",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
+    "ts-loader": "^9.0.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4",
     "webpack": "^5.34.0",
     "webpack-cli": "^4.6.0"
   },
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.1",
     "mongoose": "^5.12.5",
     "passport": "^0.4.1",
