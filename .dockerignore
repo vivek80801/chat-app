@@ -4,3 +4,4 @@ yarn.lock
 *.errors*
 *.debug
 npm-debug.log
+/**/.github
