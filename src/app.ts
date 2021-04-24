@@ -1,10 +1,13 @@
 import express from "express";
 import ejsLayout from "express-ejs-layouts";
+import passport from "passport";
 import { compileSass } from "./lib/scss";
 import { router } from "./routes/index";
+import {  myPassport} from "./config/passport";
 
 export const app = express();
 
+myPassport(passport);
 compileSass();
 
 app.set("view engine", "ejs");
