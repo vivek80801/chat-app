@@ -7,10 +7,11 @@ class User {
         this.email = email;
         this.password = password;
     }
-    validate() {
+   /* validate() {
 
     }
     save(){
 
     }
+    */
 }
