@@ -6,6 +6,6 @@ export const handleGetRequest = (req: Request, res: Response) => {
 };
 
 export const handlePostRequest = (req: Request, res: Response) => {
-	const {username, email, password}:reqBodyI = req.body;
+	const { username, email, password }: reqBodyI = req.body;
 	res.render("login");
 };
