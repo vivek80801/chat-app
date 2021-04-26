@@ -1,6 +1,9 @@
 import { Request, Response } from "express"
 
 export const handleGetChat = (req: Request, res: Response) => {
-	res.render("chat")
+    if(req.user){
+        const { username}: any = req.user;
+	res.render("chat", {username: username})
+    }
 }
 

@@ -7,7 +7,9 @@ const port = process.env.PORT || 5000;
 const io = new Server(server)
 
 io.on("connection", (socket) => {
-	console.log("user is connected")
+    socket.on("new-user", (msg) => {
+        socket.broadcast.emit("new-user-joined", msg)
+    })
 	socket.on("chat-message", (msg) =>{
 		socket.broadcast.emit("chat message", msg)
 	})
