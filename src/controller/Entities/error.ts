@@ -1,12 +1,11 @@
 export class myError {
 	errors: string[];
-	length: number
+	length: number;
 	constructor() {
 		this.errors = [];
-		this.length = this.errors.length
+		this.length = this.errors.length;
 	}
 	add(err: string) {
 		this.errors.push(err);
 	}
 }
-

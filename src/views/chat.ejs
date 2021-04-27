@@ -1,7 +1,6 @@
 <h1> Welcome <%- username %> to chat room </h1>
 <span id="notice"></span>
-<ul id="own-message"></ul>
-<ul id="board-cast"></ul>
+<ul></ul>
 <form id="my-form">
 	<input type="text" placeholder="Enter your message" id="msg" required />
 	<button type="submit">send</button>
@@ -14,8 +13,7 @@
 		const socket = io();
 		const form = document.getElementById("my-form");
 		const input = document.getElementById("msg");
-		const ownMessage = document.getElementById("own-message");
-		const boardcast = document.getElementById("board-cast");
+		const ul = document.querySelector("ul");
 		const notice = document.getElementById("notice");
 
 		socket.emit("new-user", "<%- username %>")
@@ -29,24 +27,24 @@
 			e.preventDefault();
 			if (input !== null && input.value !== null) {
 				const li = document.createElement("li");
-				const textNode = document.createTextNode(input.value)
-				li.appendChild(textNode);
-				ownMessage.appendChild(li)
 				socket.emit("chat-message", "<%- username %>: " + input.value)
+				const textNode = document.createTextNode("You: " + input.value)
+				li.appendChild(textNode);
+				ul.appendChild(li)
 				input.value = ""
 			}
 		})
 
 		socket.on("chat message", (msg) => {
-			console.log(msg);
 			if (msg !== null && msg !== "") {
+                console.log(msg);
 				const li = document.createElement("li");
 				const textNode = document.createTextNode(msg)
 				li.appendChild(textNode);
 				li.style.backgroundColor = "#00f"
 				li.style.padding = "0.75rem"
 				li.style.color = "#fff";
-				boardcast.appendChild(li)
+				ul.appendChild(li)
 			}
 		})
 	</script>

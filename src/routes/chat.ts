@@ -1,7 +1,7 @@
 import { Router } from "express";
-import {handleGetChat} from "../controller/services/chat";
-import { isAuth } from "../config/auth"
+import { handleGetChat } from "../controller/services/chat";
+import { isAuth } from "../config/auth";
 
-export const chatRouter  = Router();
+export const chatRouter = Router();
 
-chatRouter.get("/", isAuth, handleGetChat)
+chatRouter.get("/", isAuth, handleGetChat);

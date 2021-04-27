@@ -4,13 +4,13 @@ import {
 	handlePostRequest,
 	handleGetLogin,
 	handlePostLogin,
-	handleGetLogOut
+	handleGetLogOut,
 } from "../controller/services/index";
 
 export const router = express.Router();
 
 router.get("/", handleGetRequest);
 router.post("/", handlePostRequest);
-router.get("/login", handleGetLogin)
-router.post("/login", handlePostLogin)
-router.get("/logout", handleGetLogOut)
+router.get("/login", handleGetLogin);
+router.post("/login", handlePostLogin);
+router.get("/logout", handleGetLogOut);
