@@ -2,3 +2,4 @@
 /build
 /public/js
 /public/css
+/**/.env

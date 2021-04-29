@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const mongoURI = "mongodb://localhost:27017/chat-app";
+const mongoURI = process.env.MONGOURI || "mongodb://localhost:27017/chat-app";
 
 export const connectToDB = async () => {
 	try {
@@ -8,7 +8,7 @@ export const connectToDB = async () => {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
-		console.log("database is connected");
+		console.log(`database is connected on ${mongoURI}`);
 	} catch (err) {
 		console.log(err);
 	}

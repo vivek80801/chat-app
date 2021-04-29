@@ -2,6 +2,8 @@ import express from "express";
 import ejsLayout from "express-ejs-layouts";
 import passport from "passport";
 import session from "express-session";
+import {config} from "dotenv"
+import {resolve} from "path"
 import { compileSass } from "./lib/scss";
 import { router } from "./routes/index";
 import { myPassport } from "./controller/services/microservices/passport";
@@ -10,6 +12,7 @@ import { chatRouter } from "./routes/chat";
 
 export const app = express();
 
+config({path: resolve(__dirname + "/.env")});
 myPassport(passport);
 compileSass();
 connectToDB();
@@ -43,5 +46,6 @@ app.use(
 	) => {
 		console.error(err.stack);
 		res.status(500).render("error");
+        next()
 	}
 );
