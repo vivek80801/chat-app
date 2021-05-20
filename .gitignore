@@ -1,5 +1,7 @@
 /**/node_modules
 /build
 /public/js
+/public/js/*.min.js
+/public/js/*.min.css
 /public/css
 /**/.env

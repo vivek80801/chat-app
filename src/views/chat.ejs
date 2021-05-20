@@ -35,7 +35,7 @@
 			}
 		})
 
-		socket.on("chat message", (msg) => {
+		socket.once("chat message", (msg) => {
 			if (msg !== null && msg !== "") {
                 console.log(msg);
 				const li = document.createElement("li");
