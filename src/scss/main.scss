@@ -33,15 +33,18 @@ input {
 }
 li {
 	list-style: none;
+	a {
+		color: #fff;
+	}
 }
 .form-group {
 	padding: 0.75rem;
 }
-header{
-    @include setBackgroundColor($primary);
-    padding:0.75rem;
-    text-transform:capitalize;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+header {
+	@include setBackgroundColor($primary);
+	padding: 0.75rem;
+	text-transform: capitalize;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
