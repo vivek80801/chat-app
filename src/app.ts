@@ -12,13 +12,21 @@ import { chatRouter } from "./routes/chat";
 
 export const app = express();
 
-config({ path: resolve(__dirname + "/.env") });
+if (process.platform === "win32") {
+	config({ path: resolve(__dirname + "\\.env") });
+} else {
+	config({ path: resolve(__dirname + "/.env") });
+}
 myPassport(passport);
 compileSass();
 connectToDB();
 
 app.set("view engine", "ejs");
-app.set("views", "src/views");
+if (process.platform === "win32") {
+	app.set("views", "src\\views");
+} else {
+	app.set("views", "src/views");
+}
 
 app.use(
 	session({
@@ -30,7 +38,11 @@ app.use(
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname.replace("/src", "/public")));
+if (process.platform === "win32") {
+	app.use(express.static(__dirname.replace("\\src", "\\public")));
+} else {
+	app.use(express.static(__dirname.replace("/src", "/public")));
+}
 app.use(ejsLayout);
 app.use(passport.initialize());
 app.use(passport.session());
