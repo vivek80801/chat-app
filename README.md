@@ -32,4 +32,4 @@ This app should be runing on [localhost](http://localhost/ "Go to localhost")
 
 ## Video
 
-https://youtu.be/WHlLOz77ENk
+[![video preview](http://img.youtube.com/vi/WHlLOz77ENk/0.jpg)](http://www.youtube.com/watch?v=WHlLOz77ENk "video preview")
