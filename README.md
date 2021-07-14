@@ -29,3 +29,7 @@ docker-compose up
 if you want to contribute to this project. Then check CONTRIBUTE.md
 
 This app should be runing on [localhost](http://localhost/ "Go to localhost")
+
+## Video
+
+https://youtu.be/WHlLOz77ENk
